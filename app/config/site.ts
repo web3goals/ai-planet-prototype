@@ -31,4 +31,7 @@ export const siteConfig = {
       accountAbstractionSuported: false,
     } as SiteConfigContracts,
   },
+  attestations: {
+    schemaId: "SPS_qjtMfH5jcesYNUz47ehTr",
+  },
 };

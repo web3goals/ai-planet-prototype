@@ -6,12 +6,14 @@ import useMetadataLoader from "@/hooks/useMetadataLoader";
 import { AIAppMetadata } from "@/types/ai-app-metadata";
 import { erc20Abi, zeroAddress } from "viem";
 import { useAccount, useReadContract } from "wagmi";
-import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
-import { Skeleton } from "./ui/skeleton";
-import { Separator } from "./ui/separator";
 import { AIAppConversation } from "./ai-app-conversation";
+import { AIAppPostReviewDialog } from "./ai-app-post-review-dialog";
+import { AIAppReviews } from "./ai-app-reviews";
 import { AIAppUnlockForm } from "./ai-app-unlock-form";
+import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { Badge } from "./ui/badge";
+import { Separator } from "./ui/separator";
+import { Skeleton } from "./ui/skeleton";
 
 export function AIApp(props: {
   aiApp: string;
@@ -95,6 +97,17 @@ export function AIApp(props: {
       <Badge variant="secondary" className="mt-3">
         {aiAppMetadata?.category}
       </Badge>
+      <Separator className="my-8" />
+      <div className="w-full flex flex-col items-start gap-4">
+        <AIAppReviews aiApp={props.aiApp} contracts={props.contracts} />
+        {isAiAppUser && (
+          <AIAppPostReviewDialog
+            aiApp={props.aiApp}
+            contracts={props.contracts}
+            onPost={() => {}}
+          />
+        )}
+      </div>
       <Separator className="my-8" />
       {isAiAppUser ? (
         <AIAppConversation

@@ -22,8 +22,8 @@ export const siteConfig = {
   contracts: {
     arbitrumSepolia: {
       chain: arbitrumSepolia,
-      aiApp: "0x96E6AF6E9e400d0Cd6a4045F122df22BCaAAca59" as `0x${string}`,
-      usdt: "0x02008a8DBc938bd7930bf370617065B6B0c1221a" as `0x${string}`,
+      aiApp: "0xe05B06f086BE56C22A4cc70708f95d28ca9A8320" as `0x${string}`,
+      usdt: "0x63a465e2C7Ca890430f81B7cE8Ad86bc9A4512DD" as `0x${string}`,
       entryPoint: "0x0000000000000000000000000000000000000000" as `0x${string}`,
       paymaster: "0x0000000000000000000000000000000000000000" as `0x${string}`,
       accountFactory:

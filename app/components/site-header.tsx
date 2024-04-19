@@ -33,6 +33,12 @@ export function SiteHeader() {
             </Link>
           )}
           <Link
+            href={`/ai-apps`}
+            className="hidden md:block text-sm font-medium text-muted-foreground"
+          >
+            Directory
+          </Link>
+          <Link
             href={siteConfig.links.github}
             target="_blank"
             rel="noreferrer"

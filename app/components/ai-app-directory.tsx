@@ -1,9 +1,12 @@
 "use client";
 
-import { SiteConfigContracts } from "@/config/site";
+import { SiteConfigContracts, siteConfig } from "@/config/site";
 import { aiAppAbi } from "@/contracts/abi/ai-app";
+import useError from "@/hooks/useError";
 import useMetadataLoader from "@/hooks/useMetadataLoader";
 import { AIAppMetadata } from "@/types/ai-app-metadata";
+import { AIAppReview } from "@/types/ai-app-review";
+import { IndexService } from "@ethsign/sp-sdk";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useReadContract } from "wagmi";
@@ -46,6 +49,10 @@ export function AIAppCard(props: {
   aiApp: string;
   contracts: SiteConfigContracts;
 }) {
+  const { handleError } = useError();
+  const [reviews, setReviews] = useState<AIAppReview[] | undefined>();
+  const [totalEvaluation, setTotalEvaluation] = useState(0);
+
   /**
    * Define metadata
    */
@@ -59,6 +66,43 @@ export function AIAppCard(props: {
     });
   const { data: aiAppMetadata, isLoaded: isAiAppMetadataLoaded } =
     useMetadataLoader<AIAppMetadata>(aiAppMetadataUri);
+
+  async function loadReviews() {
+    try {
+      const indexService = new IndexService("testnet");
+      const attestations = await indexService.queryAttestationList({
+        schemaId: siteConfig.attestations.schemaId,
+        page: 1,
+        mode: "offchain",
+      });
+      const reviews: AIAppReview[] = [];
+      let totalEvaluation = 0;
+      for (const attestation of attestations.rows) {
+        const attestattionData = JSON.parse(attestation.data);
+        if (
+          attestattionData.chain === props.contracts.chain.id &&
+          Number(attestattionData.product) === Number(props.aiApp)
+        ) {
+          reviews.push({
+            author: attestation.attester as `0x${string}`,
+            timestamp: Number(attestation.attestTimestamp),
+            content: attestattionData.content,
+            evaluation: attestattionData.evaluation,
+          });
+          totalEvaluation += attestattionData.evaluation;
+        }
+      }
+      setReviews(reviews);
+      setTotalEvaluation(totalEvaluation);
+    } catch (error: any) {
+      handleError(error, true);
+    }
+  }
+
+  useEffect(() => {
+    loadReviews();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [props.aiApp]);
 
   if (!isAiAppMetadataUriFetched || !isAiAppMetadataLoaded) {
     return <Skeleton className="w-full h-4" />;
@@ -80,11 +124,19 @@ export function AIAppCard(props: {
         <div className="w-full flex flex-col items-start">
           <p className="text-xl font-bold">{aiAppMetadata?.label}</p>
           <p className="text-sm mt-2">{aiAppMetadata?.description}</p>
-          <Badge variant="secondary" className="mt-2">
-            {aiAppMetadata?.category}
-          </Badge>
+          <div className="flex flex-row items-center gap-4 mt-4">
+            <Badge variant="secondary">{aiAppMetadata?.category}</Badge>
+            {reviews && totalEvaluation > 0 && (
+              <p className="text-sm">
+                ⭐ {(totalEvaluation / reviews.length).toFixed(2)}{" "}
+                <span className="text-muted-foreground">
+                  — {reviews.length} review(s)
+                </span>
+              </p>
+            )}
+          </div>
           <Link href={`/ai-apps/${props.contracts.chain.id}/${props.aiApp}`}>
-            <Button variant="default" size="sm" className="mt-4">
+            <Button variant="default" size="sm" className="mt-6">
               Open
             </Button>
           </Link>

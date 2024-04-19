@@ -1,8 +1,10 @@
+import { AIAppDirectory } from "@/components/ai-app-directory";
 import { Separator } from "@/components/ui/separator";
+import { siteConfig } from "@/config/site";
 
 export default function AIAppsPage() {
   return (
-    <div className="container py-10 lg:px-80">
+    <div className="container py-10 lg:px-96">
       <div className="space-y-0.5">
         <h2 className="text-2xl font-bold tracking-tight">AI Apps</h2>
         <p className="text-muted-foreground">
@@ -10,7 +12,9 @@ export default function AIAppsPage() {
         </p>
       </div>
       <Separator className="my-6" />
-      <div>...</div>
+      {Object.values(siteConfig.contracts).map((contracts, index) => (
+        <AIAppDirectory key={index} contracts={contracts} />
+      ))}
     </div>
   );
 }

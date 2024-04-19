@@ -52,6 +52,7 @@ export function AIAppCreateForm() {
     icon: z.string(),
     label: z.string().min(1),
     description: z.string().min(1),
+    category: z.string(),
     model: z.string(),
     prompt: z.string().min(1),
     cost: z.coerce.number().gt(0),
@@ -65,6 +66,7 @@ export function AIAppCreateForm() {
       icon: undefined,
       label: "",
       description: "",
+      category: undefined,
       model: undefined,
       prompt: "",
       cost: 5,
@@ -102,6 +104,7 @@ export function AIAppCreateForm() {
         icon: values.icon,
         label: values.label,
         description: values.description,
+        category: values.category,
         model: values.model,
         prompt: values.prompt,
       };
@@ -238,6 +241,37 @@ export function AIAppCreateForm() {
                   {...field}
                 />
               </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="category"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Category</FormLabel>
+              <Select
+                onValueChange={field.onChange}
+                defaultValue={field.value}
+                disabled={isFormSubmitting}
+              >
+                <FormControl>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Select a category" />
+                  </SelectTrigger>
+                </FormControl>
+                <SelectContent>
+                  <SelectItem value="Writing">Writing</SelectItem>
+                  <SelectItem value="Productivity">Productivity</SelectItem>
+                  <SelectItem value="Research & Analysis">
+                    Research & Analysis
+                  </SelectItem>
+                  <SelectItem value="Programming">Programming</SelectItem>
+                  <SelectItem value="Education">Education</SelectItem>
+                  <SelectItem value="Lifestyle">Lifestyle</SelectItem>
+                </SelectContent>
+              </Select>
               <FormMessage />
             </FormItem>
           )}

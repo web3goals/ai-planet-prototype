@@ -149,7 +149,7 @@ function AIAppCardHeader(props: {
   function OpenPageButton() {
     return (
       <a
-        href={`/ai-app/${props.contracts.chain.id}/${props.aiApp}`}
+        href={`/ai-apps/${props.contracts.chain.id}/${props.aiApp}`}
         target="_blank"
       >
         <Button>Open Page</Button>

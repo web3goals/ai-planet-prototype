@@ -12,9 +12,11 @@ export default function AIAppsPage() {
         </p>
       </div>
       <Separator className="my-6" />
-      {Object.values(siteConfig.contracts).map((contracts, index) => (
-        <AIAppDirectory key={index} contracts={contracts} />
-      ))}
+      <div className="flex flex-col items-start gap-6">
+        {Object.values(siteConfig.contracts).map((contracts, index) => (
+          <AIAppDirectory key={index} contracts={contracts} />
+        ))}
+      </div>
     </div>
   );
 }

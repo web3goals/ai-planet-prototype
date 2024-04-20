@@ -30,7 +30,7 @@ export function AIAppDirectory(props: { contracts: SiteConfigContracts }) {
   useEffect(() => {
     setAIApps(undefined);
     if (nextTokenId) {
-      setAIApps(Array.from(Array(nextTokenId).keys()));
+      setAIApps(Array.from(Array(Number(nextTokenId)).keys()));
     }
   }, [nextTokenId]);
 

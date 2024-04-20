@@ -19,6 +19,14 @@ const config: HardhatUserConfig = {
       url: process.env.ARBITRUM_SEPOLIA_URL as string,
       accounts: [process.env.PRIVATE_KEY as string],
     },
+    gnosisChiado: {
+      url: "https://rpc.chiadochain.net",
+      accounts: [process.env.PRIVATE_KEY as string],
+    },
+    filecoinCalibration: {
+      url: "https://api.calibration.node.glif.io/rpc/v1",
+      accounts: [process.env.PRIVATE_KEY as string],
+    },
   },
 };
 

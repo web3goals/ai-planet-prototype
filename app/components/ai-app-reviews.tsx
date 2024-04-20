@@ -67,7 +67,7 @@ export function AIAppReviews(props: {
         renderEntityCard={(review, index) => (
           <AiAppReviewCard key={index} review={review} />
         )}
-        noEntitiesText={`No AI apps on ${props.contracts.chain.name} 😐`}
+        noEntitiesText={`No reviews 😐`}
       />
     </div>
   );

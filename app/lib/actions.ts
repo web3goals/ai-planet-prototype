@@ -160,8 +160,8 @@ export async function executeViaSmartAccount(
     callGasLimit: BigInt(2_000_000),
     verificationGasLimit: BigInt(500_000),
     preVerificationGas: BigInt(100_000),
-    maxFeePerGas: parseUnits("4", etherUnits.gwei),
-    maxPriorityFeePerGas: parseUnits("4", etherUnits.gwei),
+    maxFeePerGas: parseUnits("5", etherUnits.gwei),
+    maxPriorityFeePerGas: parseUnits("5", etherUnits.gwei),
     paymasterAndData: contracts.paymaster,
     signature:
       "0xfffffffffffffffffffffffffffffff0000000000000000000000000000000007aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa1c" as `0x${string}`,

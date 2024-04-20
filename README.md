@@ -18,9 +18,12 @@ This platform is designed to solve that problem.
   - Entry Point - [0xcee8564039B5620b847E91866e54d2DE3fCD10a0](https://sepolia.arbiscan.io/address/0xcee8564039B5620b847E91866e54d2DE3fCD10a0)
   - Paymaster - [0x0702Ae9aff3031a242233F01F1FB35b03AF18a50](https://sepolia.arbiscan.io/address/0x0702Ae9aff3031a242233F01F1FB35b03AF18a50)
   - Account Factory - [0xc254cDd94b834966DB91e99bb6aE073Df3F55Bd7](https://sepolia.arbiscan.io/address/0xc254cDd94b834966DB91e99bb6aE073Df3F55Bd7)
+- Contracts (Gnosis Chiado):
+  - AI App - [0x96E6AF6E9e400d0Cd6a4045F122df22BCaAAca59](https://gnosis-chiado.blockscout.com/address/0x96E6AF6E9e400d0Cd6a4045F122df22BCaAAca59)
+  - USD Token - [0x02008a8DBc938bd7930bf370617065B6B0c1221a](https://gnosis-chiado.blockscout.com/address/0x02008a8DBc938bd7930bf370617065B6B0c1221a)
 - Contracts (Filecoin Calibration):
   - AI App - [0xe720443310986E173af339fA366A30aa0A1Ea5b2](https://calibration.filscan.io/en/address/0xe720443310986E173af339fA366A30aa0A1Ea5b2)
-  - USD Token -[0x7e2E43D2078463F277FD9a2815143642b14455cb](https://calibration.filscan.io/en/address/0x7e2E43D2078463F277FD9a2815143642b14455cb)
+  - USD Token - [0x7e2E43D2078463F277FD9a2815143642b14455cb](https://calibration.filscan.io/en/address/0x7e2E43D2078463F277FD9a2815143642b14455cb)
 
 ## 🏗️ Architecture
 

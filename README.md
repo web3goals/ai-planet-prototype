@@ -14,7 +14,7 @@ This platform is designed to solve that problem.
 - Attestation Scheme (Sign Protocol) - [SPS_qjtMfH5jcesYNUz47ehTr](https://testnet-scan.sign.global/schema/SPS_qjtMfH5jcesYNUz47ehTr)
 - Contracts (Arbitrum Sepolia):
   - AI App - [0xe05B06f086BE56C22A4cc70708f95d28ca9A8320](https://sepolia.arbiscan.io/address/0xe05B06f086BE56C22A4cc70708f95d28ca9A8320)
-  - USD Token -[0x63a465e2C7Ca890430f81B7cE8Ad86bc9A4512DD](https://sepolia.arbiscan.io/address/0x63a465e2C7Ca890430f81B7cE8Ad86bc9A4512DD)
+  - USD Token - [0x63a465e2C7Ca890430f81B7cE8Ad86bc9A4512DD](https://sepolia.arbiscan.io/address/0x63a465e2C7Ca890430f81B7cE8Ad86bc9A4512DD)
   - Entry Point - [0xcee8564039B5620b847E91866e54d2DE3fCD10a0](https://sepolia.arbiscan.io/address/0xcee8564039B5620b847E91866e54d2DE3fCD10a0)
   - Paymaster - [0x0702Ae9aff3031a242233F01F1FB35b03AF18a50](https://sepolia.arbiscan.io/address/0x0702Ae9aff3031a242233F01F1FB35b03AF18a50)
   - Account Factory - [0xc254cDd94b834966DB91e99bb6aE073Df3F55Bd7](https://sepolia.arbiscan.io/address/0xc254cDd94b834966DB91e99bb6aE073Df3F55Bd7)

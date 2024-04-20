@@ -15,8 +15,8 @@ export const CONTRACTS: {
     paymaster: "0x0702Ae9aff3031a242233F01F1FB35b03AF18a50",
   },
   gnosisChiado: {
-    aiApp: undefined,
-    usdToken: undefined,
+    aiApp: "0x96E6AF6E9e400d0Cd6a4045F122df22BCaAAca59",
+    usdToken: "0x02008a8DBc938bd7930bf370617065B6B0c1221a",
     entryPoint: "0x0000000000000000000000000000000000000000",
     accountFactory: "0x0000000000000000000000000000000000000000",
     paymaster: "0x0000000000000000000000000000000000000000",

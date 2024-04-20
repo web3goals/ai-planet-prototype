@@ -1,4 +1,9 @@
-import { Chain, arbitrumSepolia, filecoinCalibration } from "viem/chains";
+import {
+  Chain,
+  arbitrumSepolia,
+  filecoinCalibration,
+  gnosisChiado,
+} from "viem/chains";
 
 export type SiteConfig = typeof siteConfig;
 
@@ -30,16 +35,16 @@ export const siteConfig = {
         "0xc254cDd94b834966DB91e99bb6aE073Df3F55Bd7" as `0x${string}`,
       accountAbstractionSuported: true,
     } as SiteConfigContracts,
-    // gnosisChiado: {
-    //   chain: gnosisChiado,
-    //   aiApp: "0x0000000000000000000000000000000000000000" as `0x${string}`,
-    //   usdt: "0x0000000000000000000000000000000000000000" as `0x${string}`,
-    //   entryPoint: "0x0000000000000000000000000000000000000000" as `0x${string}`,
-    //   paymaster: "0x0000000000000000000000000000000000000000" as `0x${string}`,
-    //   accountFactory:
-    //     "0x0000000000000000000000000000000000000000" as `0x${string}`,
-    //   accountAbstractionSuported: false,
-    // } as SiteConfigContracts,
+    gnosisChiado: {
+      chain: gnosisChiado,
+      aiApp: "0x96E6AF6E9e400d0Cd6a4045F122df22BCaAAca59" as `0x${string}`,
+      usdt: "0x02008a8DBc938bd7930bf370617065B6B0c1221a" as `0x${string}`,
+      entryPoint: "0x0000000000000000000000000000000000000000" as `0x${string}`,
+      paymaster: "0x0000000000000000000000000000000000000000" as `0x${string}`,
+      accountFactory:
+        "0x0000000000000000000000000000000000000000" as `0x${string}`,
+      accountAbstractionSuported: false,
+    } as SiteConfigContracts,
     filecoinCalibration: {
       chain: filecoinCalibration,
       aiApp: "0xe720443310986E173af339fA366A30aa0A1Ea5b2" as `0x${string}`,

@@ -34,6 +34,7 @@ export function SiteHeader() {
           )}
           <Link
             href={`/ai-apps`}
+            target="_blank"
             className="hidden md:block text-sm font-medium text-muted-foreground"
           >
             Directory
